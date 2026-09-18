@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CKD Prediction - Input Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style-predict.css') }}">
+</head>
+<body>
+
+    <div class="page-wrap">
+
+        <div class="header">
+            <h2>Chronic Kidney Disease Prediction</h2>
+            <p>Please fill in your medical details</p>
+        </div>
+
+        <form action="/predict" method="POST" class="form-card">
+
+            <!-- 1. specific_gravity -->
+            <div class="field">
+                <label>Specific Gravity</label>
+                <select name="specific_gravity" required>
+                    <option value="1.005">1.005</option>
+                    <option value="1.010">1.010</option>
+                    <option value="1.015">1.015</option>
+                    <option value="1.020">1.020</option>
+                    <option value="1.025">1.025</option>
+                </select>
+            </div>
+
+            <!-- 2. albumin -->
+            <div class="field">
+                <label>Albumin</label>
+                <select name="albumin" required>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+
+            <!-- 3. blood_glucose_random -->
+            <div class="field">
+                <label>Blood Glucose Random (mg/dL)</label>
+                <input type="text" name="blood_glucose_random" placeholder="Numeric value" required>
+            </div>
+
+            <!-- 4. serum_creatinine -->
+            <div class="field">
+                <label>Serum Creatinine (mg/dL)</label>
+                <input type="text" name="serum_creatinine" placeholder="Numeric value" required>
+            </div>
+
+            <!-- 5. haemoglobin -->
+            <div class="field">
+                <label>Haemoglobin (g/dL)</label>
+                <input type="text" name="haemoglobin" placeholder="Numeric value" required>
+            </div>
+
+            <!-- 6. packed_cell_volume -->
+            <div class="field">
+                <label>Packed Cell Volume (%)</label>
+                <input type="text" name="packed_cell_volume" placeholder="Numeric value" required>
+            </div>
+
+            <!-- 7. red_blood_cell_count -->
+            <div class="field">
+                <label>Red Blood Cell Count (millions/cumm)</label>
+                <input type="text" name="red_blood_cell_count" placeholder="Numeric value" required>
+            </div>
+
+            <!-- 8. hypertension -->
+            <div class="field">
+                <label>Hypertension</label>
+                <select name="hypertension" required>
+                    <option value="yes">yes</option>
+                    <option value="no">no</option>
+                </select>
+            </div>
+
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</body>
+</html>

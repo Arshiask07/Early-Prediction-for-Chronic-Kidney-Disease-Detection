@@ -1,0 +1,19 @@
+# Jupyter
+.ipynb_checkpoints/
+
+# CatBoost writes this during training, regenerates every run
+catboost_info/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# OS / editor clutter
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# local env config, if you add one later
+.env
